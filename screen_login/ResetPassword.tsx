@@ -2,14 +2,14 @@ import React, { useState } from 'react'
 import { View, Text, StyleSheet, Button, Image, Alert } from 'react-native'
 
 //공통사용 컴포넌트 import
-import InputComponent from '../components/inputComponent'
+import InputComponent from '../components/InputComponent'
 import TabComponent from '../components/TabComponent'
 
 import { StackScreenProps } from '@react-navigation/stack'
 import { LoginNavScreenList } from '../types'
-type ResetPWProps= StackScreenProps<LoginNavScreenList,'ResetPW'>
+type ResetPasswordProps= StackScreenProps<LoginNavScreenList,'ResetPassword'>
 
-export default function ResetPW(props:ResetPWProps):JSX.Element{ //props객체{navigation, route}
+export default function ResetPassword(props:ResetPasswordProps):JSX.Element{ //props객체{navigation, route}
 
     // 1. 우선 테스트 목적의 화면
     // return (
@@ -36,7 +36,7 @@ export default function ResetPW(props:ResetPWProps):JSX.Element{ //props객체{n
             <View style={style.content}>
                 {/* 1.1 좌물쇠 이미지 표시 영역 */}
                 <View style={style.lockImageContainer}>
-                    <Image source={require('../Images/lock.jpg')}></Image>
+                    <Image source={require('../Images/lock.png')}></Image>
                 </View>
 
                 {/* 1.2 타이틀 안내문구 표시 */}
