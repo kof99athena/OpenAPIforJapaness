@@ -19,13 +19,14 @@ export default function ResetPassword(props:ResetPasswordProps):JSX.Element{ //p
     // )
 
     // 탭에 따른 화면 구성을 위한 state 변수들
-    const [tabs, setTabs]= useState<string[]>(['이메일','전화번호'])
+    const [tabs, setTabs]= useState<string[]>(['メールアドレス','電話番号'])
     const [tabIndex, setTabIndex]= useState<number>(0)
 
     // 탭 선택에 따른 안내메세지
     const message= [
-        '이메일을 입력하면 임시 비밀번호를 보내드립니다.',
-        '전화번호를 입력하면 임시 비밀번호를 보내드립니다.',
+        'wifiDokoに登録しているメールアドレスを入力して下さい。',
+        'wifiDokoに登録している電話番号を入力して下さい。',
+        
     ]
 
 
@@ -40,7 +41,7 @@ export default function ResetPassword(props:ResetPasswordProps):JSX.Element{ //p
                 </View>
 
                 {/* 1.2 타이틀 안내문구 표시 */}
-                <Text style={style.title}>로그인에 문제가 있나요?</Text>
+                <Text style={style.title}>ログインできない場合のお手続き</Text>
 
                 {/* 1.3 이메일 또는 전화번호 선택에 대한 안내문구 */}
                 <Text style={style.message}> {message[tabIndex]} </Text>
@@ -59,14 +60,14 @@ export default function ResetPassword(props:ResetPasswordProps):JSX.Element{ //p
 
                 {/* 1.6 전송 버튼 */}
                 <View style={{width:'100%', margin:16}}>
-                    <Button title='전송' onPress={()=>Alert.alert('임시비밀번호가 발송되었습니다.','로그인 후 정보수정을 통해 안전한 비밀번호로 변경해 주시기 바랍니다.')}></Button>
+                    <Button title='確認コードを送信' onPress={()=>Alert.alert('確認コードが送信されました。','ログインの後、パスワード変更お願い致します。')}></Button>
                 </View>
 
             </View>
 
             {/* 2. footer 영역 */}
             <View style={style.footer}>
-                <Text style={style.goBack} onPress={()=>props.navigation.goBack()}>로그인화면으로 돌아가기</Text>
+                <Text style={style.goBack} onPress={()=>props.navigation.goBack()}>ログイン画面に戻る</Text>
             </View>
 
         </View>

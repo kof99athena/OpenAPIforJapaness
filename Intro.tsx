@@ -6,8 +6,13 @@ import AsyncStorage from '@react-native-async-storage/async-storage'
 import { StackScreenProps } from '@react-navigation/stack'
 import { RootScreenList } from './types'
 type IntroProps= StackScreenProps<RootScreenList,'Intro'>
+//StackScreenProps는 화면전환에 필요한 녀석, route는 putextra같은 녀석
 
 // functional component - 파라미터로 props {navigation, route} 객체 받음
+
+//Main.tsx 에서 StackNavigator를 만들면 하위 화면에 navigation객체와 props가 자동으로 만들어짐
+//StackScreenProps타입을 파라미터로 받아서 이용할건데, 타입스크립트에서는 전달받는 화면의 리스트가 없으면 에러
+
 export default function Intro(props:IntroProps):JSX.Element{ 
 
     // 로그인한 적인 있는지 검사한 후 결과에 따라 LoginNav or MainNav로 이동

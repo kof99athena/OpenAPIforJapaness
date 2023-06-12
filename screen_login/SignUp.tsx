@@ -19,7 +19,7 @@ export default function Signup(props:SignupProps):JSX.Element{ //props객체{nav
     // )
 
     // 탭 작업에서 사용할 state 변수
-    const [tabs, setTabs] = useState(['전화번호','이메일']) //탭 라벨을 string배열로 만들기
+    const [tabs, setTabs] = useState(['電話番号','メールアドレス']) //탭 라벨을 string배열로 만들기
     const [tabIndex, setTabIndex]= useState(0) //현재 선택된 탭번호
 
     // [완료]버튼 클릭시 실행하는 메소드
@@ -57,29 +57,29 @@ export default function Signup(props:SignupProps):JSX.Element{ //props객체{nav
                     //if(tabIndex==1) //JSX의 {}안에서는 if문법은 불가능
                     
                     // && 연산자 - 앞의 조건값이 true일때만 뒤에 있는 실행문이 실행됨
-                    tabIndex==1 && <InputComponent placeholder='비밀번호' secureTextEntry={true}></InputComponent>
+                    tabIndex==1 && <InputComponent placeholder='パスワード' secureTextEntry={true}></InputComponent>
                 }
 
                 {/* 1.4 전화번호 탭일때의 [다음] 버튼 */}
                 {
-                    tabIndex==0 && <View style={{width:'100%', margin:16}}><Button title='다음' onPress={()=>setTabIndex(1)}></Button></View>
+                    tabIndex==0 && <View style={{width:'100%', margin:16}}><Button title='次へ' onPress={()=>setTabIndex(1)}></Button></View>
                 }
 
                 {/* 1.5 이메일 탭일때의 [완료] 버튼 */}
                 {
-                    tabIndex===1 && <View style={{width:'100%', margin:16}}><Button title='완료' onPress={()=>signup()}></Button></View>
+                    tabIndex===1 && <View style={{width:'100%', margin:16}}><Button title='完了' onPress={()=>signup()}></Button></View>
                 }
 
                 {/* 1.6 전화번호 탭일때 입력에 대한 이유를 안내하는 메세지 표시 */}
                 {
-                    tabIndex===0 && <Text style={style.telMessage}>Movie APP의 업데이트 내용을 SMS로 수신할 수 있으며, 언제든지 수신을 취소할 수 있습니다.</Text>
+                    tabIndex===0 && <Text style={style.telMessage}>アップデートの内容をご案内いたします。またいつでも受信拒否の設定をすることができます。</Text>
                 }
             </View>
 
             {/* 2. footer영역 */}
             <View style={style.footer}>
                 <Text style={style.footerMsg}>
-                    이미 계정이 있으신가요? <Text style={style.goBack} onPress={()=>props.navigation.goBack()}>로그인</Text>
+                    アカウントはある場合は <Text style={style.goBack} onPress={()=>props.navigation.goBack()}>ログイン</Text>
                 </Text>
             </View>
         </View>

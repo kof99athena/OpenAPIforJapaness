@@ -1,5 +1,5 @@
 import React from 'react'
-import { View, Text, StyleSheet, Button } from 'react-native'
+import { View, Text, StyleSheet, Button, Image } from 'react-native'
 import AsyncStorage from '@react-native-async-storage/async-storage'
 
 // 공통사용 컴포넌트 import
@@ -47,31 +47,32 @@ export default function Login(props:LoginProps):JSX.Element{ //props객체{navig
             {/* 1. 로그인 콘텐츠 영역 */}
             <View style={style.content}>
                 {/* 1.1 로고 */}
-                <Text style={style.logo}>MOVIE MRHI</Text>
+                {/* <Text style={style.logo}>wifiDoko</Text> */}
+                <Image source={require('../Images/wifiapp_logo.png')}></Image>
 
                 {/* 1.2 이메일/비밀번호 입력박스 */}
                 {/* TextInput은 로그인,회원가입,비밀번호재설정 화면에서도 모두 사용되므로 사용빈도 높음. 이를 일일이 스타일 하기 어려우므로 별도의 CustomComponent로 제작하여 재사용*/}
-                <InputComponent placeholder='이메일' onChangeText={changeText}></InputComponent>
-                <InputComponent placeholder='비밀번호' secureTextEntry={true}></InputComponent>
+                <InputComponent placeholder='メールアドレス' onChangeText={changeText}></InputComponent>
+                <InputComponent placeholder='パスワード' secureTextEntry={true}></InputComponent>
 
                 {/* 1.3 비밀번호 재설정 */}
-                <Text style={style.resetPW} onPress={()=>props.navigation.navigate('ResetPassword')}>비밀번호 재설정</Text>
+                <Text style={style.resetPW} onPress={()=>props.navigation.navigate('ResetPassword')}>ログインできない場合</Text>
 
                 {/* 1.4 로그인 버튼 */}
                 <View style={{width:'100%', marginBottom:24}}>
-                    <Button title='로그인' onPress={login}></Button>
+                    <Button title='ログイン' onPress={login}></Button>
                 </View>
 
                 {/* 1.5 회원가입 안내 글씨 */}
                 <Text style={style.signup}>
-                    계정이 없으신가요? <Text style={style.signupLink} onPress={()=>props.navigation.navigate('Signup')}>가입하기</Text>
+                    アカウントがない場合は <Text style={style.signupLink} onPress={()=>props.navigation.navigate('Signup')}>新規取得</Text>
                 </Text>
                 
             </View>
 
             {/* 2. footer 영역 */}
             <View style={style.footer}>
-                <Text style={style.footerCopyright}>MovieApp by HRHI</Text>
+                <Text style={style.footerCopyright}>FREE Wi-Fi & TOKYO by wifiDoko</Text>
             </View>
 
         </View>

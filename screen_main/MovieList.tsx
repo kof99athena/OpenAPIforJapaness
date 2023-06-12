@@ -31,7 +31,7 @@ export default function MovieList(props:MovieListProps):JSX.Element{
                         props.navigation.replace('Intro')
                     }}>
                     <Image source={require('../Images/Tabs/ic_profile.png')}></Image>
-                    <Text style={{marginLeft:4}} >로그아웃</Text>
+                    <Text style={{marginLeft:4}} >ログアウト</Text>
                 </TouchableOpacity>
             )
 
@@ -49,6 +49,7 @@ export default function MovieList(props:MovieListProps):JSX.Element{
 
     //인기 영화 정보 불러오는 url [get방식]
     const bigUrl="https://yts.lt/api/v2/list_movies.json?sort_by=like_count&order_by=desc&limit=5";
+    
 
     // 최신등록순 영화 정보 불러오는 url 
     const recentUrl="https://yts.lt/api/v2/list_movies.json?sort_by=date_added&order_by=desc&limit=10";

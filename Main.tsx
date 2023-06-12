@@ -25,9 +25,11 @@ export default function Main():JSX.Element{
     return (
         <NavigationContainer>
             <RootStack.Navigator screenOptions={{headerShown:false}}>
+                
                 <RootStack.Screen name='Intro' component={Intro}></RootStack.Screen>
                 <RootStack.Screen name='LoginNav' component={LoginNav}></RootStack.Screen>
                 <RootStack.Screen name='MainNav' component={MainNav}></RootStack.Screen>
+                
             </RootStack.Navigator>
         </NavigationContainer>
     )
